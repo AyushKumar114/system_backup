@@ -1,0 +1,14 @@
+#!/bin/bash
+BACKUP_DIR="/home/mypc/Desktop/Assignments"		# Backup directory
+ARCHIVE_NAME="tar.gz"					# Destination for the tar.gz archive
+ARCHIVE_PATH="$BACKUP_DIR/$ARCHIVE_NAME"		# Destination for the tar.gz archive
+FILES_TO_BACKUP=("/home/mypc/Desktop/Assignments") 	# Files and directories to include in 											the backup
+tar -czf "$ARCHIVE_PATH" "${FILES_TO_BACKUP[@]}"	# Create the backup tar.gz archive
+chmod 400 "$ARCHIVE_PATH"				# Set archive permission to user read-only
+echo "Backup created at: $ARCHIVE_PATH"
+
+
+# this one is for terminal
+#crontab -e
+#0 1 * * * /home/mypc/Desktop/Assignments/Assignment3
+
